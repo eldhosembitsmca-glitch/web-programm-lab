@@ -1,0 +1,44 @@
+<html>
+<body>
+<h2>Registration form</h2>
+<form onsubmit="form_validate()">
+name :<input type="text" id="name"> <br><br>
+email :<input type="email" id="email"> <br><br>
+phone :<input type="text" id="phone"> <br><br>
+password :<input type="password" id="pass"> <br><br>
+<input type="submit" value="register">
+
+<script>
+function form_validate() {
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const phone=document.getElementById("phone").value;
+const pass=document.getElementById("pass").value;
+
+if(name=="" || email=="" || phone=="" || pass=="") {
+alert("all fields are required ");
+return false;
+}
+if(!email.include('@') || !email.include('.')) {
+alert("enter valid email ");
+return false;
+}
+if(phone.length !=10 || isNaN(phone)) {
+alert("enter a valid 10 digit phone number");
+return false;
+}
+if(pass.length<6) {
+alert("password must be atleast 6 characters");
+return false;
+}
+alert("login successful");
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
